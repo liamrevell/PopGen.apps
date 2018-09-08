@@ -6,14 +6,15 @@ ui <- fluidPage(
     sidebarPanel(
      sliderInput(inputId="n",
                   label="number of individuals",
-                  value=10,min=1,max=100),
+                  value=10,min=0,max=100),
       sliderInput(inputId="ngen",
                   label="number of generations",
-                  value=20,min=2,max=100),
+                  value=20,min=0,max=100),
       actionButton("newplot", "New plot")
     ),
     mainPanel(
-      plotOutput("plot",height="800px")
+      plotOutput("plot",width="600px",
+                  height="800px")
     )
   )
 )
