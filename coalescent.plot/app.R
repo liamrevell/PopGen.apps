@@ -1,20 +1,30 @@
 library(shiny)
 library(PopGen)
 
-ui <- fluidPage(
+ui<-fluidPage(
   sidebarLayout(
     sidebarPanel(
-     sliderInput(inputId="n",
-                  label="number of individuals",
-                  value=10,min=0,max=100),
+      sliderInput(inputId="n",
+        label="number of individuals",
+        value=20,min=0,max=100),
       sliderInput(inputId="ngen",
-                  label="number of generations",
-                  value=20,min=0,max=100),
-      actionButton("newplot", "New plot")
+        label="number of generations",
+        value=20,min=0,max=200),
+      radioButtons(inputId="col.order",
+        label="color ordering",
+        choices=c("sequential","alternating"),
+        selected="alternating"),
+      textInput(inputId="seed",
+        label="set seed (optional)",value=""),
+      actionButton("newplot","new plot"),
+      h3("\n\nInstructions:\n"),
+      p("Choose number of individuals & population size 
+        to simulate coalescence.\nSet the seed & gradually 
+        increase the number of generations to watch fixation 
+        occur.")
     ),
     mainPanel(
-      plotOutput("plot",width="600px",
-                  height="800px")
+      plotOutput("plot",width="600px",height="800px")
     )
   )
 )
@@ -22,7 +32,10 @@ ui <- fluidPage(
 server <- function(input, output) {
   output$plot<-renderPlot({
     input$newplot
-    coalescent.plot(input$n,input$ngen,sleep=0)
+    if(input$seed!="") set.seed(as.numeric(input$seed))
+    if(input$n>0&&input$ngen>0)
+      coalescent.plot(input$n,input$ngen,sleep=0,
+        col.order=input$col.order)
   })
 }
 

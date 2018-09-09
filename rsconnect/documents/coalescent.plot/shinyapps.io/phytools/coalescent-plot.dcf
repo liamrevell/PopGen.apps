@@ -1,0 +1,12 @@
+name: coalescent-plot
+title: coalescent-plot
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 429179
+bundleId: 1575937
+url: https://phytools.shinyapps.io/coalescent-plot/
+when: 1536413756.23644
+asMultiple: FALSE
+asStatic: FALSE
