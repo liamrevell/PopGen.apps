@@ -26,13 +26,13 @@ server <- function(input, output) {
   output$plot<-renderPlot({
     input$newplot
     isolate(
-    if(input$nloci>0){
-      if(input$p!=""){
-          p<-as.numeric(strsplit(input$p,",")[[1]])
-      } else p<-NULL
-      if(input$random) p<-runif(input$nloci)
-      phenotype.freq(input$nloci,p=p)
-    }
+      if(input$nloci>0){
+        if(input$p!=""){
+            p<-as.numeric(strsplit(input$p,",")[[1]])
+        } else p<-NULL
+        if(input$random) p<-runif(input$nloci)
+        phenotype.freq(input$nloci,p=p)
+      }
     )
   })
 }

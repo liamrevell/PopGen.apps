@@ -2,6 +2,7 @@ library(shiny)
 library(PopGen)
 
 ui<-fluidPage(
+  h3("Coalescent genealogy simulator",align="center"),
   sidebarLayout(
     sidebarPanel(
       sliderInput(inputId="n",
@@ -14,6 +15,10 @@ ui<-fluidPage(
         label="color ordering",
         choices=c("sequential","alternating"),
         selected="alternating"),
+      checkboxInput(inputId="react",
+        label=
+        "reactive (plot changes instantly with new parameter values)",
+        value=TRUE),
       textInput(inputId="seed",
         label="set seed (optional)",value=""),
       actionButton("newplot","new plot"),
@@ -31,11 +36,28 @@ ui<-fluidPage(
 
 server <- function(input, output) {
   output$plot<-renderPlot({
-    input$newplot
-    if(input$seed!="") set.seed(as.numeric(input$seed))
-    if(input$n>0&&input$ngen>0)
-      coalescent.plot(input$n,input$ngen,sleep=0,
-        col.order=input$col.order)
+    if(!input$react){
+      input$newplot
+      isolate(
+        if(input$seed!=""){
+          set.seed(as.numeric(input$seed))
+        }
+      )
+      input$newplot
+      isolate(
+        if(input$n>0&&input$ngen>0){
+          coalescent.plot(input$n,input$ngen,sleep=0,
+            col.order=input$col.order)
+        }
+      )
+    } else {
+      input$newplot
+      if(input$seed!="")
+        set.seed(as.numeric(input$seed))
+      if(input$n>0&&input$ngen>0)
+        coalescent.plot(input$n,input$ngen,sleep=0,
+          col.order=input$col.order)
+    }
   })
 }
 
