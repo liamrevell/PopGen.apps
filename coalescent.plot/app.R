@@ -22,11 +22,14 @@ ui<-fluidPage(
       textInput(inputId="seed",
         label="set seed (optional)",value=""),
       actionButton("newplot","new plot"),
-      h3("\n\nInstructions:\n"),
+      h4("Instructions:\n"),
       p("Choose number of individuals & population size 
         to simulate coalescence.\nSet the seed & gradually 
         increase the number of generations to watch fixation 
-        occur.")
+        occur.\n\n"),
+      h4("Details:\n"),
+      p("Web application for coalescent.plot of
+        the PopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="800px")
@@ -47,7 +50,8 @@ server <- function(input, output) {
       isolate(
         if(input$n>0&&input$ngen>0){
           coalescent.plot(input$n,input$ngen,sleep=0,
-            col.order=input$col.order)
+            col.order=input$col.order,
+            mar=c(1.1,4.1,0,1.1))
         }
       )
     } else {
@@ -56,7 +60,8 @@ server <- function(input, output) {
         set.seed(as.numeric(input$seed))
       if(input$n>0&&input$ngen>0)
         coalescent.plot(input$n,input$ngen,sleep=0,
-          col.order=input$col.order)
+          col.order=input$col.order,
+          mar=c(1.1,4.1,0,1.1))
     }
   })
 }

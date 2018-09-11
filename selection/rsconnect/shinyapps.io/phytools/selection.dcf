@@ -1,0 +1,12 @@
+name: selection
+title: selection
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 434864
+bundleId: 1579520
+url: https://phytools.shinyapps.io/selection/
+when: 1536625546.58628
+asMultiple: FALSE
+asStatic: FALSE
