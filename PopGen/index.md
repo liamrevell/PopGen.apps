@@ -48,5 +48,10 @@ a biallelic locus. (Interface for <code>selection</code>.)<br>
 
 </table>
 
+<hr>
+
+All the web applications of this page were made by Liam J. Revell. The contents of this page have been 
+developed with the support of National Science Foundation awards DEB-1350474 and DBI-1759940.
+
 </body>
 
