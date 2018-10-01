@@ -1,0 +1,12 @@
+name: drift-selection
+title: drift-selection
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 433224
+bundleId: 1616659
+url: https://phytools.shinyapps.io/drift-selection/
+when: 1538421349.43268
+asMultiple: FALSE
+asStatic: FALSE

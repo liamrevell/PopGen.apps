@@ -5,8 +5,8 @@ account: phytools
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 436428
-bundleId: 1580663
+bundleId: 1616638
 url: https://phytools.shinyapps.io/freqdep/
-when: 1536685778.08972
+when: 1538420705.33203
 asMultiple: FALSE
 asStatic: FALSE

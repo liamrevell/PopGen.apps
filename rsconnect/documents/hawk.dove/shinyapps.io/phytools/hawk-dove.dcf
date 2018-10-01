@@ -1,0 +1,12 @@
+name: hawk-dove
+title: hawk-dove
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 449681
+bundleId: 1616630
+url: https://phytools.shinyapps.io/hawk-dove/
+when: 1538420519.54061
+asMultiple: FALSE
+asStatic: FALSE

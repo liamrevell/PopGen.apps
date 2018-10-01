@@ -1,0 +1,12 @@
+name: founder-event
+title: founder-event
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 451424
+bundleId: 1616647
+url: https://phytools.shinyapps.io/founder-event/
+when: 1538420914.62443
+asMultiple: FALSE
+asStatic: FALSE

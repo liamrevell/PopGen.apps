@@ -1,5 +1,5 @@
 library(shiny)
-library(PopGen)
+library(learnPopGen)
 
 ui <- fluidPage(
   h3("Phenotypic trait distribution for a polygenic trait",align="center"),
@@ -24,7 +24,7 @@ ui <- fluidPage(
         equally & additively to the trait value. Compare to one locus
         in which the trait distribution matches HW proportions.\n\n"),
       h4("Details:\n"),
-      p("Web interface for phenotype.freq of the PopGen R package 
+      p("Web interface for phenotype.freq of the learnPopGen R package 
         (Revell, 2018).")
     ),
     mainPanel(

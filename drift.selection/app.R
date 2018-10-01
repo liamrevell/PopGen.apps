@@ -1,6 +1,6 @@
 library(shiny)
 library(rhandsontable)
-library(PopGen)
+library(learnPopGen)
 
 w<-matrix(c("1.00","1.00","1.00"),1,3,dimnames=list(NULL,c("W(AA)","W(Aa)","W(aa)")))
 
@@ -28,7 +28,7 @@ ui <- fluidPage(
       h4("Instructions:\n"),
       p("This application simulates drift & natural selection on a biallelic locus.\n\n"),
       h4("Details:\n"),
-      p("Web interface for drift.selection of the PopGen R package (Revell, 2018).")
+      p("Web interface for drift.selection of the learnPopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

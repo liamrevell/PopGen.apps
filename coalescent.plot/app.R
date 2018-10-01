@@ -1,5 +1,5 @@
 library(shiny)
-library(PopGen)
+library(learnPopGen)
 
 ui<-fluidPage(
   h3("Coalescent genealogy simulator",align="center"),
@@ -29,7 +29,7 @@ ui<-fluidPage(
         occur.\n\n"),
       h4("Details:\n"),
       p("Web application for coalescent.plot of
-        the PopGen R package (Revell, 2018).")
+        the learnPopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="800px")

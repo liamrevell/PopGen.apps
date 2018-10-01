@@ -1,5 +1,5 @@
 library(shiny)
-library(PopGen)
+library(learnPopGen)
 
 ui<-fluidPage(
   h3("Proving the Central Limit Theorem",align="center"),
@@ -24,7 +24,7 @@ ui<-fluidPage(
       p("Change the number of variables or underlying 
         distribution functions to prove CLT to yourself.\n\n"),
       h4("Details:\n"),
-      p("Web application for clt of the PopGen R package 
+      p("Web application for clt of the learnPopGen R package 
         (Revell, 2018).")
     ),
     mainPanel(

@@ -1,6 +1,6 @@
 library(shiny)
 library(rhandsontable)
-library(PopGen)
+library(learnPopGen)
 
 w<-matrix(c("1.00","0.90","0.80"),1,3,dimnames=list(NULL,c("W(AA)","W(Aa)","W(aa)")))
 
@@ -26,7 +26,7 @@ ui <- fluidPage(
       p("This application numerically analyzes a simple natural selection model for 
         a biallelic locus.\n\n"),
       h4("Details:\n"),
-      p("Web interface for selection of the PopGen R package (Revell, 2018).")
+      p("Web interface for selection of the learnPopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

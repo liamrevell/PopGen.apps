@@ -1,6 +1,6 @@
 library(shiny)
 library(rhandsontable)
-library(PopGen)
+library(learnPopGen)
 
 p0<-matrix(c("0.5","0.5"),1,2,dimnames=list(NULL,c("p[1]","p[2]")))
 Ne<-matrix(c("400","400"),1,2,dimnames=list(NULL,c("Ne[1]","Ne[2]")))
@@ -37,7 +37,7 @@ ui <- fluidPage(
         locus evolving in two populations potentially experiencing differential
         natural selection.\n\n"),
       h4("Details:\n"),
-      p("Web interface for msd of the PopGen R package (Revell, 2018).")
+      p("Web interface for msd of the learnPopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

@@ -1,0 +1,12 @@
+name: phenotype-freq
+title: phenotype-freq
+username:
+account: phytools
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 431142
+bundleId: 1616602
+url: https://phytools.shinyapps.io/phenotype-freq/
+when: 1538419926.05169
+asMultiple: FALSE
+asStatic: FALSE

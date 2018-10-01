@@ -1,5 +1,5 @@
 library(shiny)
-library(PopGen)
+library(learnPopGen)
 
 ui <- fluidPage(
   h3("Multilocus Hardy-Weinberg frequencies",align="center"),
@@ -17,7 +17,7 @@ ui <- fluidPage(
       h4("Instructions:\n"),
       p("This multilocus Hardy-Weinberg frequencies for a set of biallelic loci.\n\n"),
       h4("Details:\n"),
-      p("Web interface for multilocus.hw of the PopGen R package (Revell, 2018).")
+      p("Web interface for multilocus.hw of the learnPopGen R package (Revell, 2018).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="500px")
