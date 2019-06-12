@@ -29,7 +29,7 @@ ui<-fluidPage(
         occur.\n\n"),
       h4("Details:\n"),
       p("Web application for coalescent.plot of
-        the learnPopGen R package (Revell, 2018).")
+        the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="800px")

@@ -28,7 +28,7 @@ ui<-fluidPage(
         fitnesses of the three genotypes are as follows, where f() denotes 
         the frequency of each genotype: w(AA)=1-3*f(Aa)+3*f(aa); w(Aa)=1-s*f(Aa); 
         and w(aa)=1-3*f(Aa)+3*f(AA)."),
-      p("Web application for freqdep of the learnPopGen R package (Revell, 2018).")
+      p("Web application for freqdep of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

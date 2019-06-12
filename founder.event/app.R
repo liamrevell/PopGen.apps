@@ -20,7 +20,7 @@ ui<-fluidPage(
       h4("Instructions:\n"),
       p("Explore founder-effect (aka. population bottleneck) changes in allele frequency in a population.\n\n"),
       h4("Details:\n"),
-      p("Web application for founder.event of the learnPopGen R package (Revell, 2018).")
+      p("Web application for founder.event of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

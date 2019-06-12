@@ -17,7 +17,7 @@ ui <- fluidPage(
       h4("Instructions:\n"),
       p("This multilocus Hardy-Weinberg frequencies for a set of biallelic loci.\n\n"),
       h4("Details:\n"),
-      p("Web interface for multilocus.hw of the learnPopGen R package (Revell, 2018).")
+      p("Web interface for multilocus.hw of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="500px")

@@ -25,7 +25,7 @@ ui <- fluidPage(
         in which the trait distribution matches HW proportions.\n\n"),
       h4("Details:\n"),
       p("Web interface for phenotype.freq of the learnPopGen R package 
-        (Revell, 2018).")
+        (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",

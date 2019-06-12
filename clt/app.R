@@ -5,12 +5,14 @@ ui<-fluidPage(
   h3("Proving the Central Limit Theorem",align="center"),
   sidebarLayout(
     sidebarPanel(
-      sliderInput(inputId="nvar",label="number of variables",
+      sliderInput(inputId="nvar",label="number of random variables",
         min=0,max=100,value=1),
-      sliderInput(inputId="nobs",label="number of observations",
+      sliderInput(inputId="nobs",label="number of observations per variable",
         min=0,max=10000,value=4000),
       selectInput(inputId="df",label="distribution function",
-        choices=c("exponential","normal","uniform")),
+        choices=c("exponential","normal","uniform","binomial")),
+      selectInput(inputId="show",
+        label="show plot of observation-wise:",choices=c("sum","mean")),
       numericInput(inputId="breaks",label="number of breaks in histogram",
         min=1,max=40,value=20),
       checkboxInput(inputId="react",
@@ -25,7 +27,7 @@ ui<-fluidPage(
         distribution functions to prove CLT to yourself.\n\n"),
       h4("Details:\n"),
       p("Web application for clt of the learnPopGen R package 
-        (Revell, 2018).")
+        (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="600px")
@@ -40,7 +42,8 @@ server <- function(input, output) {
       input$newplot
       isolate(
         if(input$nvar>0&&input$nobs>0){
-          clt(input$nvar,input$nobs,input$df,breaks=input$breaks)
+          clt(input$nvar,input$nobs,input$df,breaks=input$breaks,
+            show=input$show)
           if(input$nvar<=1) mtext("add more!")
           else if(input$nvar<=10) mtext(paste(input$nvar,"may not be enough!"))
           else if(input$nvar<=20) mtext("looks pretty normal, right?")
@@ -51,7 +54,8 @@ server <- function(input, output) {
     } else {
       input$newplot
       if(input$nvar>0&&input$nobs>0){
-        clt(input$nvar,input$nobs,input$df,breaks=input$breaks)
+        clt(input$nvar,input$nobs,input$df,breaks=input$breaks,
+          show=input$show)
         if(input$nvar<=1) mtext("add more!")
         else if(input$nvar<=10) mtext(paste(input$nvar,"may not be enough!"))
         else if(input$nvar<=20) mtext("looks pretty normal, right?")

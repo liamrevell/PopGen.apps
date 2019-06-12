@@ -15,6 +15,7 @@ ui <- fluidPage(
         max=1000),
       p(strong("Pay-off matrix:")),
       rHandsontableOutput("M"),
+      p("(pay-off to row when interacting with column)"),
       checkboxInput(inputId="react",
         label="reactive (plot changes instantly with new parameter values)",
         value=TRUE),
@@ -24,7 +25,7 @@ ui <- fluidPage(
         model in which strategy is heritable across generations, and competitive 
         outcome determines fitness.\n\n"),
       h4("Details:\n"),
-      p("Web interface for hawk.dove of the learnPopGen R package (Revell, 2018).")
+      p("Web interface for hawk.dove of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="600px",height="800px")
@@ -56,7 +57,7 @@ server <- function(input, output) {
     if (!is.null(input$M)) {
       DF = hot_to_r(input$M)
       values[["M"]] = DF
-      rhandsontable(DF)
+      rhandsontable(DF,colHeaders=c("hawk","dove"),rowHeaders=c("hawk","dove"))
     } else if (!is.null(values[["M"]])) {
       DF = values[["M"]]
       rhandsontable(DF)

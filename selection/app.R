@@ -26,7 +26,7 @@ ui <- fluidPage(
       p("This application numerically analyzes a simple natural selection model for 
         a biallelic locus.\n\n"),
       h4("Details:\n"),
-      p("Web interface for selection of the learnPopGen R package (Revell, 2018).")
+      p("Web interface for selection of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")

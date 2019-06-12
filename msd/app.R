@@ -37,7 +37,7 @@ ui <- fluidPage(
         locus evolving in two populations potentially experiencing differential
         natural selection.\n\n"),
       h4("Details:\n"),
-      p("Web interface for msd of the learnPopGen R package (Revell, 2018).")
+      p("Web interface for msd of the learnPopGen R package (Revell, 2019).")
     ),
     mainPanel(
       plotOutput("plot",width="100%",height="500px")
